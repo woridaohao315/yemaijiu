@@ -1,0 +1,107 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+p:first-child{
+   overflow: hidden;
+}
+
+.reg{
+   padding: 20px 10px;
+   width: 378px;
+   border: 1px solid #d2d2ce;
+   background: #f8f8f5;
+   margin: 100px auto;
+   overflow: hidden;
+}
+
+.reg .title{
+   height: 37px;
+   border-bottom: 1px solid #ccc;
+   padding: 0 20px;
+   font-weight: 700;
+}
+.reg .title>a{
+   font-size: 12px;
+   float: right;
+   line-height: 45px;
+   text-decoration: none;
+   font-weight: 100;
+}
+.reg .content{
+   margin-top: 15px;
+
+}
+.reg label{
+   height: 46px;
+   width: 90px;
+   display: inline-block;
+   text-align: right;
+}
+.reg input{
+   width: 273px;
+   height: 38px;
+   border-top:2px solid #666;
+   border-left:2px solid #666;
+   border-right:2px solid #ccc;
+   border-bottom:2px solid #ccc;
+   text-indent:3px;
+}
+input#ver_code,#mes_ver_code{
+   width: 179px;
+   height: 42px;
+}
+.canvas_reg{
+   display: inline-block;
+   border: 1px solid #ccc;
+   margin-left: -5px;
+   vertical-align: middle;
+}
+#mes_ver_code_btn{
+   width: 98px;
+   height: 40px;
+   background-color: #E4431AFF;
+   color: #fff;
+   vertical-align: middle;
+   margin-left: -5px;
+   border: 1px solid #ccc;
+   outline: none;
+   cursor: pointer;
+   border-radius: 5px;
+}
+p.checkbox_reg>input{
+   width: 15px;
+   height: 15px;
+   margin-left: 50px;
+}
+p.checkbox_reg>label{
+   width: 150px;
+   text-align: left;
+}
+p.checkbox_reg>a{
+   font-size: 13px;
+   text-decoration: none;
+}
+.submit_reg{
+   width: 378px;
+   height: 45px;
+   background-color: #c00;
+   color: #fff;
+   font-size: 20px;
+   margin: 10px auto;
+   border: none;
+}
+p.alert_username{
+   color:#f00;
+   font-size:12px;
+   margin-top:-10px;
+   display:none;
+}
+p.alert_username>i{
+   margin-left:90px;
+   display:inline-block;
+   height:16px;
+   width: 16px;
+   background: url("../img/icon_error.gif") no-repeat scroll 0 3px;;
+}

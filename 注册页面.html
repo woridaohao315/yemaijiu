@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reg.css">
+</head>
+
+<body>
+    <div class="reg">
+        <p class="title">
+            注册也买酒
+            <a href="#">您可以使用QQ、支付宝、新浪微博登录</a>
+        </p>
+        <div class="content">
+            <p>
+                <label for="username">手机号码:</label>
+                <input type="text" id="username" placeholder="请输入手机号">
+            </p>
+            <p class="alert_username">
+                <i></i>
+                请输入手机号
+            </p>
+            <p>
+                <label for="ver_code">验证码:</label>
+                <input type="text" id="ver_code" placeholder="请输入验证码">
+                <canvas class="canvas_reg" width="95" height="40">浏览器版本过低,请升级</canvas>
+            </p>
+            <p>
+                <label for="mes_ver_code">短信验证码:</label>
+                <input type="text" id="mes_ver_code" placeholder="请输入验证码">
+                <button id="mes_ver_code_btn">获取短信验证码</button>
+            </p>
+            <p>
+                <label for="password">密码:</label>
+                <input type="text" id="password" placeholder="密码请设为6-16位字母或数字">
+            </p>
+            <p>
+                <label for="repassword">密码确认:</label>
+                <input type="text" id="repassword" placeholder="再次输入登录密码">
+            </p>
+            <p class="checkbox_reg">
+                <input type="checkbox" id="have_vip"><label for="have_vip">我有vip升级码</label><br>
+                <input type="checkbox" id="have_18"><label for="have_18">我已满18周岁并接受</label>
+                <a href="#">《也买酒服务条款》</a>
+            </p>
+            <p>
+                <button class="submit_reg">
+                    注册完成
+                </button>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/data.js"></script>
+<script>
+var mcanvas = document.querySelector("canvas");
+var ctx = mcanvas.getContext("2d");
+var text = "0123456789zxcvbnmlkjhgfdsaqwertyuiop";
+var content = "";
+
+mcanvas.onclick = function() {
+    content = "";
+    ctx.clearRect(0, 0, 95, 40);
+    reset();
+};
+reset();
+//绘制验证码
+function reset() {
+
+
+    //   绘制验证码文本
+    for (var i = 0; i < 4; i++) {
+        ctx.beginPath();
+        ctx.fillStyle = getRandomColor(80, 120);
+        ctx.textBaseline = "top";
+        ctx.font = "18px '微软雅黑'";
+        ctx.textAlign = "center";
+        var rtext = text[Mathrandom(0, text.length - 1)];
+        content += rtext;
+        // ctx.fillText(rtext,i*30+Mathrandom(0,12),Mathrandom(2,20)); //没有角度的效果，也挺好的
+        //    先位移  在旋转  在绘制文本   在反向旋转   反向位移
+        ctx.translate(i * 23.75, 0);
+        var mdeg = Mathrandom(-20, 20); //记录角度
+        ctx.rotate(Math.PI / 180 * mdeg);
+        ctx.fillText(rtext, Mathrandom(7, 19), Mathrandom(2, 20));
+        ctx.rotate(-Math.PI / 180 * mdeg);
+        ctx.translate(-i * 23.75, 0);
+    }
+    //    线
+    for (i = 0; i < 4; i++) {
+        ctx.beginPath();
+        ctx.strokeStyle = getRandomColor(120, 220);
+        ctx.moveTo(Mathrandom(0, 20), Mathrandom(0, 40));
+        ctx.lineTo(Mathrandom(70, 90), Mathrandom(0, 40));
+        ctx.stroke();
+    }
+    //    点
+    for (i = 0; i < 25; i++) {
+        ctx.beginPath();
+        ctx.fillStyle = getRandomColor(120, 220);
+        ctx.arc(Mathrandom(5, 90), Mathrandom(5, 35), 1, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+}
+
+function Mathrandom(min, max) {
+    return parseInt(Math.random() * (max - min + 1) + min);
+}
+
+function getRandomColor(min, max) {
+    var r = Mathrandom(min, max);
+    var g = Mathrandom(min, max);
+    var b = Mathrandom(min, max);
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+document.querySelector("button").onclick = function() {
+    var minput = document.querySelector("#ver_code");
+    var inputValue = minput.value;
+    console.log(content);
+    if (inputValue === content) {
+        alert("注册成功");
+        minput.value = "";
+        ctx.clearRect(0, 0, 95, 40);
+        content = "";
+        reset();
+    } else {
+        alert("错误");
+        minput.value = "";
+    }
+}
+
+
+//输入框输入判定,正则表达式
+var verCode = document.getElementById("ver_code");
+var password = document.getElementById("password");
+var repassword = document.getElementById("repassword");
+var numres = /^1[3456789]\d{9}$/;
+var pwdres = /^[a-z1-9]{6,16}$/;
+//       手机号输入框 失去焦点时调用的方法
+function nam() {
+    var oInp = document.getElementById("username");
+    if (numres.test(oInp.value)) {
+        $('.alert_username').hide();
+        $('#username').css({
+            "border-top": "2px solid #666",
+            "border-left": "2px solid #666",
+            "border-right": "2px solid #ccc",
+            "border-bottom": "2px solid #ccc"
+        });
+        return true;
+    } else {
+        $('#username').css('border-color', '#f00');
+        $('.alert_username').show();
+        return false;
+    }
+}
+
+function pwd() {
+    //        var pwd=document.getElementById("password");
+    if (pwdres.test(password.value)) {
+        $('#password').css({
+            "border-top": "2px solid #666",
+            "border-left": "2px solid #666",
+            "border-right": "2px solid #ccc",
+            "border-bottom": "2px solid #ccc"
+        });
+        return true;
+    } else {
+        $("#password").css('border-color', '#f00');
+        return false;
+    }
+}
+
+function repwd() {
+    if (repassword.value == password.value) {
+        $('#repassword').css({
+            "border-top": "2px solid #666",
+            "border-left": "2px solid #666",
+            "border-right": "2px solid #ccc",
+            "border-bottom": "2px solid #ccc"
+        });
+        return true;
+    } else {
+        $("#repassword").css('border-color', '#f00');
+        return false;
+    }
+}
+
+function vercode() {
+    if (verCode.value == content) {
+        $('#ver_code').css({
+            "border-top": "2px solid #666",
+            "border-left": "2px solid #666",
+            "border-right": "2px solid #ccc",
+            "border-bottom": "2px solid #ccc"
+        });
+        return true;
+    } else {
+        $("#ver_code").css('border-color', '#f00');
+        return false;
+    }
+}
+
+function agree() {
+    if ($("#have_18").prop("checked")) {
+        return true;
+    } else {
+        alert("请同意");
+        return false;
+    }
+}
+$("#username").blur(function() {
+    nam();
+})
+
+
+//点击注册
+$(".submit_reg").click(function() {
+    // checkMobile($("#username").val());
+
+    if (nam() && vercode() && pwd() && repwd() && agree()) {
+
+        checkMobile($("#username").val());
+        alert("检查手机号通过");
+    } else {}
+})
+
+
+function checkMobile(mobile) {
+    if (mobile) {
+        $.ajax({
+            url: "http://tools.yufenghen.cn/mock/yemaijiu/checkphone.php",
+            dataType: "json",
+            data: {
+                mobile: mobile
+            },
+            success: function(data) {
+
+                if (data.code == 200) {
+
+                    reg();
+
+
+                } else {
+
+                    alert("手机号已存在,请尝试登录!");
+
+                }
+
+            }
+        })
+
+    }
+
+}
+
+function reg() {
+    alert("reg执行了");
+    $.ajax({
+        url: "http://tools.yufenghen.cn/mock/yemaijiu/reggo.php",
+        type: "post",
+        data: {
+            mobile: $("#username").val(),
+            password: $("#password").val()
+        },
+        dataType: "json",
+        success: function(data) {
+            if (data.code == 200) {
+                alert("恭喜你,注册成功!");
+                location.href = "denglu.html"
+            } else {
+                alert("内部错误,注册失败!")
+            }
+        }
+    })
+}
+</script>
+
+</html>

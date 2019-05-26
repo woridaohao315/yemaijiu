@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/gwc.css">
+</head>
+
+<body>
+
+<!--页头部分-->
+<header>
+    <div class="container">
+        <ul class="left" id="user_denglu">
+            <li><span>9840777</span>位会员的选择</li>
+            <li><a href="denglu.html">登录</a></li>
+            <li class="b"><a href="注册页面.html">注册</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="javaScript:;">会员俱乐部</a></li>
+            <li class="b"><a href="javaScript:;">签到</a></li>
+            <li class="mycount"><a href="javaScript:;">我的账户 <i class="arrow_down"></i></a>
+                <ol>
+                    <li><a href="javaScript:;">我的订单</a></li>
+                    <li><a href="javaScript:;">我的存酒库</a></li>
+                    <li><a href="javaScript:;">我的优惠券</a></li>
+                    <li><a href="javaScript:;">我的收藏夹</a></li>
+                </ol>
+            </li>
+            <li class="phone_header"><a href="javaScript:;"><i></i>手机版</a>
+                <div>
+                    <div class="top"> APP首单 <span class="red">满100得100</span></div>
+                    <div class="middle">
+                        <div><img src="img/red-code.png" alt=""></div>
+                        <div> 下载也买酒客户端 <img src="img/android.png" alt=""> <img src="img/ios.png" alt=""></div>
+                    </div>
+                    <div class="bottom"><a href="#" class="blue">了解更多客户端优惠</a></div>
+                </div>
+            </li>
+            <li class="b"><a href="javaScript:;">设置勿扰</a></li>
+        </ul>
+    </div>
+</header>
+<!--商标部分-->
+<div id="brand">
+    <div class="container">
+        <a href="也买酒主页.html" class="left">
+            <img src="gwcimg/logo2.png" alt="" width="160">
+        </a>
+        <div class="right buzhou" ></div>
+    </div>
+</div>
+<!--购物车主体-->
+<div id="main_gwc">
+    <div class="container">
+        <p class="tips">
+            <span class="red">温馨提示：</span>也买商城订单可以合并下单啦。无论您的购物车里有几家也买商家的商品都可以合并成一张订单付款。<a class="close_gwc_tips"></a>
+        </p>
+        <div class="details">
+            <div class="peisong">
+                <div class="left">
+                    <i></i>
+                    <h3>由也买酒配送</h3>
+                </div>
+                <div class="right">
+                    <span class="dd_sp_num cartType">
+							<b class="cartGoodsNum_1-normal">1</b>
+                            <i></i>
+						</span>
+                </div>
+            </div>
+            <div class="shangpin_tab">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td height="34" width="8%"><input class="e-selall selectAll selectAll_1-normal" type="checkbox"
+                                                          name="checkbox">
+                            <label style="cursor: pointer;">全选</label>
+                        </td>
+                        <td>商品名称</td>
+                        <td width="13%">单价</td>
+                        <td width="13%">数量</td>
+                        <td width="13%">小计</td>
+                        <td width="13%">&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="shangpin">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="inTable" id="tbHover"
+                       data-carttype="1-normal">
+                    <tbody>
+                    <tr>
+                        <td width="8%" class="btn_fx">
+                            <input type="checkbox" name="goodsSelect" value="6208220" class="goodsSelect"
+                                   checked="checked"></td>
+                        <td width="8%" class="left">
+                            <a href="/goods/6208220.html" target="_blank" class="prod-img">
+                                <img src="https://img09.yesmyimg.com/6208220/3477523_60x98.JPG"></a>
+                        </td>
+                        <td class="left" style="float:none;">
+                            <a href="/goods/6208220.html" target="_blank" class="title">卡葡卡黑比诺干红葡萄酒</a>
+                            <br>
+                            Kapuka Pinot Noir
+                            <br>
+                            <span class="red"></span><br>
+                            <ins id="error_5152044"></ins>
+                        </td>
+                        <td width="13%" class="dj_price">
+                            ¥<b>232.0</b><br>
+                        </td>
+                        <td class="amount_sa" width="13%">
+                            <span class="jj_box">
+                                <a title="减少" class="left   left_jy  subAmount cartSubAmount">-</a>
+                                <input name="input" class="editAmount cartEditAmount  num_goods" type="text" value="1"
+                                       maxlength="3" minvalue="1" maxvalue="500">
+                                <a title="增加" class="right  addAmount cartAddAmount">+</a>
+                            </span>
+                        </td>
+                        <td class="xj_price" width="13%">¥<b>232.0</b></td>
+                        <td width="13%" class="btn_edit">
+                            <a data-goodsid="6208220" class="addFavorite"> 加入收藏夹 </a>
+                            <br>
+                            <a class="btn-remove removeGoods" data-goodsnum="1">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="piliang">
+                <ul>
+                    <li><input class="e-selall selectAll selectAll_1-normal" type="checkbox"
+                               name="checkbox">
+                        <label>全选</label>
+                    </li>
+                    <li class="removeSelectedGoods">批量删除</li>
+                    <li class="addSelectedFavorite clicktr">批量加入收藏夹</li>
+                    <!--  <li class='clearIsNotStore'>清除缺货商品</li> -->
+                </ul>
+            </div>
+        </div>
+        <div id="detial_down">
+            <div class="result">
+                <div class="subtotal subtotal_1-normal"><span class="fl" style="color:red"></span>
+                    <span class="jg">商品件数：<b class="subTotalNum_1-normal">1</b> 件</span>
+                    <span>商品总价：<b>¥<input type="hidden" id="oldSumPriceAll0" value="232.0"><i>232.0</i></b></span>
+                    <span class="buy_yh">活动优惠：<b>¥<em>0.0</em></b></span>
+                    <span class="buy_yh">优惠券：<b>¥<em class="lqzCouponPrivilege_1-normal">0</em></b></span>
+                </div>
+            </div>
+            <div class="buy">
+                <div id="floatNav_buy" class="listCart listCart-fixed  cartCoupon cartCoupon_1-normal">
+                    <ul class="clearfix">
+                        <li class="buy q_select_hover">
+                            <div class="payexpress_panl" id="quick_check_out_div" style="display:none;"></div>
+                            <a class="buy" onclick="toBalance();">去结算</a>
+                            <a class="buy_bc memberGift memberGift_1-normal" style="cursor: default;">
+                                <font class="noGift" style="cursor: default;">没有可领取礼品 </font>
+                            </a>
+                            
+                            <div class="buy_yhq_y couponList_1-normal"> 商品没有符合优惠券使用条件
+                            </div>
+                            <a class="total_price"> 商品数量：<b class="total_num_1-normal"
+                                                            style=" font: bold 14px Arial;color:red">1</b>&nbsp;件
+                                &nbsp;&nbsp;<strong>应付金额</strong><em>(不含运费)</em>：<i>¥</i><b
+                                        class="total total_1-normal">232.0</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 点击删除商品的模态框 -->
+<div id="util-popbox">
+    <div class="center">
+        <p>确定删除1个购物车里的商品吗?</p>
+        <p>
+            <button class="close_util_popbox">确定</button>
+            <button class="cancel_util_popbox">取消</button>
+        </p>
+    </div>
+</div>
+<!--活动-->
+<div id="activity">
+    <div class="container">
+        <div class="title">
+            <h2>本次购买您可享受以下活动
+                <span class="gray">
+                所有0元赠品已自动添加到您的购物车中，您可直接结算
+            </span>
+            </h2>
+        </div>
+        <div class="tabs tabs_detail">
+            <ul>
+                <li>最佳拍档</li>
+                <li>浏览记录</li>
+                <li>我的收藏</li>
+            </ul>
+            <div class="f1">
+                <ul>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="subAmount"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500" class="num_goods">
+                                <a href="#" class="addAmount"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="s2">
+                <ul>
+                    <li>
+                        <dt>
+                            <img src="https://img19.yesmyimg.com/5150856/9438535_110x180.jpg" alt="">
+                        </dt>
+                        <dd>
+                            <a href="#" class="name">冰酒袋</a>
+                            <p class="price">
+                                促销价：<br>
+                                <span class="red">¥30.0</span>
+                            </p>
+                            <p class="change_num">
+                                <a href="#" class="addAccont"></a>
+                                <input type="text" minvalue="1" value="1" maxvalue="500">
+                                <a href="#" class="addAccoont"></a>
+                            </p>
+                            <button>加入购物车</button>
+                        </dd>
+                    </li>
+                </ul>
+            </div>
+            <div class="t3">
+                请先登录再查看我的收藏信息!
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--页脚-->
+<footer id="footer">
+    <p><span class="top100">消费者最喜爱的网站TOP100</span>|
+        <span class="age18">仅限18周岁以上人士购买</span>|
+        <span class="zhengxin"><a href="#">网络社会征信网</a></span>|
+        <span class="shgs">上海工商</span>|
+        <span>京公网安备11010502013828</span></p>
+    <br>
+    <span>Copyright 2006-2015 也买酒 yesmywine.com 版权所有</span>|
+    <span>沪ICP备17040012号-1</span>
+    <br>
+    <a href="#"><img height="40px" src="https://img3.yesmyimg.com/images/event/2017/cert.png?" alt=""></a>
+    <a href="#"><img height="40px" src="https://img14.yesmyimg.com/images/event/2015/12/jiujiao.jpg" alt=""></a>
+    <br>
+    <a href="#"><img src="https://img14.yesmyimg.com/images/event/2017/link.jpeg" alt=""></a>
+</footer>
+
+
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/gwc.js"></script>
+</body>
+
+</html>

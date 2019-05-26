@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.denglu{
+    width: 373px;
+    height: 439px;
+    margin: 100px auto;
+    padding-left: 30px;
+
+    border: 1px solid #ccc;
+    /*text-align: center;*/
+}
+.denglu > h1{
+    /*width:300px;*/
+    height: 22px;
+    padding: 15px 0;
+
+    background: url('../img/login_text.gif') no-repeat 0 20px;
+    /*margin-bottom: 0px auto;*/
+}
+/*.denglu>.u_p{*/
+/*margin-left:20px;*/
+/*}*/
+.denglu > .u_p > input{
+    width: 288px;
+    height: 30px;
+
+    border-top: 1px solid #968d88;
+    border-right: 1px solid #ccbfb9;
+    border-bottom: 1px solid #ccbfb9;
+    border-left: 1px solid #968d88;
+}
+.denglu > .u_p > input:nth-child(3){
+    margin-top: 10px;
+}
+.denglu > .u_p > input:focus{
+    border: 1px solid #a00000;
+}
+.denglu > .u_p{
+    margin-top: 20px;
+    height:120px;
+}
+.denglu > .u_p > p{
+    font-size: 12px;
+    display: none;
+
+    height: 25px;
+    margin-top: 3px;
+
+    color: red;
+}
+.denglu > .u_p > p > i{
+    display: inline-block;
+
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+
+    vertical-align: -2px;
+
+    background: url('../img/icon_error.gif') no-repeat;
+}
+.denglu button{
+    font-size: 18px;
+
+    display: block;
+
+    width: 300px;
+    height: 40px;
+
+    cursor: pointer;
+
+    color: white;
+    /*margin-left: 20px;*/
+    border: none;
+    outline: none;
+    /*background: url("img/btn_login.gif") no-repeat cover;*/
+    background-image: url('../img/btn_login.gif');
+}
+.denglu button:hover{
+    transition: .5s;
+
+    background-image: url('../img/btn_login_hover.gif');
+}
+.denglu #auto_login{
+    margin: 20px 0;
+}
+.denglu label{
+    font-size: 14px;
+}
+.denglu .aa{
+    font-size: 12px;
+    /*line-height:20px;*/
+
+    padding: 10px 0;
+}
+.denglu .aa > a{
+    margin-right: 20px;
+}
+.denglu > div.bottom{
+    width: 403px;
+    margin-top: 5px;
+    margin-left: -30px;
+
+    border-top: 1px dashed #ccc;
+}
+.denglu > div.bottom > span{
+    font-size: 12px;
+
+    display: inline-block;
+
+    margin-top: 5px;
+    margin-left: 30px;
+
+    color: #999;
+}
+.denglu > div.bottom > p > a{
+    display: inline-block;
+
+    width: 32px;
+    height: 32px;
+    margin-top: 15px;
+    margin-left: 20px;
+
+    background: url('../img/icons.png') no-repeat -111px -12px ;
+}
+.denglu > div.bottom > p{
+    margin-left: 30px;
+}
+.denglu > div.bottom > p > a:nth-child(1){
+    margin-left: 0;
+}
+.denglu > div.bottom > p > a:nth-child(2){
+    background-position: -59px  -12px ;
+}
+.denglu > div.bottom > p > a:nth-child(3){
+    background-position: -8px  -11px ;
+}
+.denglu > div.bottom > p > a:nth-child(4){
+    background-position: -163px -11px ;
+}
