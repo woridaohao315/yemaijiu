@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/denglu.css">
+</head>
+
+<body>
+    <div class="denglu">
+        <h1></h1>
+        <div class="u_p">
+            <input type="text" placeholder="请输入E-mail或手机号" id="phone">
+            <p class="tel"><i></i>请输入E-mail地址或手机号</p>
+            <input type="password" placeholder="请输入密码" id="pwd">
+            <p class="pwd"><i></i>
+               请输入密码
+            </p>
+        </div>
+        <input type="checkbox" id="auto_login">
+        <label for="auto_login">自动登录</label>
+        <button>登录</button>
+        <div class="aa">
+            <a href="#">[忘记密码？]</a>
+            <a href="注册页面.html">[注册新账号]</a>
+        </div>
+        <div class="bottom">
+         <span>使用合作网站账号登录:</span><br>
+            <p>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    //手机号,邮箱正则表达式
+    var resphone=/^1[3456789]\d{9}$|^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    var respwd=/^[a-z0-9A-Z]{6,17}$/;
+
+    function phone(){
+        if(resphone.test($("#phone").val())){
+            $(".tel").hide();
+            return true;
+        }else{
+            $(".tel").show();
+            return false;
+        }
+    }
+    function pwd() {
+        if(respwd.test($("#pwd").val())){
+            $(".pwd").hide();
+            return true;
+        }else{
+            $(".pwd").show();
+            return false;
+        }
+    }
+
+
+    $("button").click(function () {
+        if(phone()&&pwd()){
+            $.ajax({
+                url:"http://tools.yufenghen.cn/mock/yemaijiu/logingo.php",
+                type:"post",
+                data:{
+                  mobile:$("#phone").val(),
+                  password:$("#pwd").val()
+                },
+                dataType:"json",
+                success:function(data){
+                    if(data.code==200){
+                        alert(data.msg);
+                        setCookie({
+                            mobile:$("#phone").val(),
+                            password:$("#pwd").val()
+                        });
+                        location.href="也买酒主页.html"
+                    }else{
+                        alert("用户名或密码错误");
+                    }
+                }
+            })
+        }
+    })
+
+    function setCookie(json) {
+        if(json){
+            for(var k in json){
+                document.cookie=k+"="+json[k];
+
+            }
+
+        }
+
+    }
+</script>
+
+</html>
